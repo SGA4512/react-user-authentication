@@ -33,6 +33,7 @@ export default class Login extends React.Component {
 				} else {
 					const token = response.data.token
 					localStorage.setItem('userAuthToken', token)
+					this.props.handleAuth(true)
 					this.props.history.push("/users/account")
 				}
 			})
